@@ -1,0 +1,191 @@
+two types of testing:
+1.Unit testing(Jasmine)
+2.functional testing(framework is protractor)--ng test
+inside package.json
+under script
+"test":"ng test"
+
+Unit Testing:
+1.Integration testing:
+   for apis,dbs,restends...that has certain dependencies
+   no templets
+   no services(only fake services provided by jasmine)
+   
+2.Isolation testing:
+        for hardcoded data
+		tests everything (we use)*
+3.Shallow Testing:
+		no child testing
+		
+	In jasmine-->test runner is karma...
+	describe( ) and it( ) methods
+	1.describe('suit' )-->
+	 suit-->bunch of test cases it(  )
+	 suit-->describe('suit',callback)
+	 spec/test-->it(' ',callback)
+	 3ways to skip test cases:
+		a.xit
+		b.pending( ) inside jasmine
+		c.
+			*pending spec helps us to solve or error later on
+		We can utilize all dev dependencies in jasmine frame work
+		
+		comparing:expect(actual value).matcherfunction(expectedValue)
+	ISOLATED TESTING:
+	1.we can check arrays
+	2.we cannot templet testing
+	3.check fake services
+	4.for hard coded data
+	
+	--->hitting ng test it automatically opens a browser...karma
+	--->creating folder under app-->compute-->compute.ts and compute.spec.ts
+	***compute.ts:
+			//export
+			export function compute(num){
+			if(num>0) return 1
+			return -1
+			}
+	   compute.spec.ts:
+	       //import
+		   import {compute} from './compute';
+		   describe('testing compute( )happy flow",( )=>{
+		    it('should have return positive value",( )=>{
+			    let x = compute(3) ;
+				expect(x).toBe(1);
+				expect(a).toBeNull();
+			})
+			it("should have return negitive value",( )=>{
+			  let x = compute(-3);
+			  expect(x).toBe(-1);
+			})
+		   })
+		   
+		   ***
+		   toBe(===) -->strictly checking
+		   toEqual
+		   toContinue
+		   toBedefined
+		   toBeundefined
+		   toBetruthy(only true values)
+		   toBeFalse
+		   
+		   not.toBe
+		   not.toEqual
+		   
+		   -->we can write multiple expects
+		   
+		   **create course folder in which
+		   course.component.spec.ts
+		   course.component.ts
+		   
+		   course.component.ts:
+		      export class CourseComponent{
+			  totalcourses = 0;
+			  addcourses( ) {
+			  this.totalcourses--;
+	            }
+				removecourse( ){
+				this.totalcourses--;
+				}
+				}
+				
+		    course.component.spec.ts:
+			import {CourseComponent} from './course.component';
+			let component: CourseComponent
+			describe('testing courses component happy flow",( )=>{
+			beforeEach(( )=>{
+			 component = new CourseComponent;
+			})
+		    it('should have return incremented value while addng course",( )=>{
+			   //let component=new CourseComponent( ); 
+			   component.addcourses( );
+			   expect(component.totalcourses).toBe(1);
+			})
+			it("should have return decremented value while removing course",( )=>{
+			   // let component = new CourseComponent( );
+			   Component.removecourse( );
+			   expect(component.totalcourses).toBe(-1);
+			})
+		   })
+		   //for initilizing purpose
+		   *BeforeEach(callback)-->every time it creates an object
+		   *AfterEach(callback)
+		   
+		    course.component.ts:
+		      export class CourseComponent{
+			  totalcourses = 0;
+			  //test this arrays
+			  let courses = ["html","css",J.s"];
+			  addcourses( ) {
+			  this.totalcourses--;
+	            }
+				removecourse( ){
+				this.totalcourses--;
+				}
+				}
+				
+						
+		    course.component.spec.ts:
+			import {CourseComponent} from './course.component';
+			let component: CourseComponent
+			describe('testing courses component happy flow",( )=>{
+			beforeEach(( )=>{
+			 component = new CourseComponent;
+			})
+		    it('should have return incremented value while addng course",( )=>{
+			   //let component=new CourseComponent( ); 
+			   component.addcourses( );
+			   expect(component.totalcourses).toBe(1);
+			})
+			it("should have return decremented value while removing course",( )=>{
+			   // let component = new CourseComponent( );
+			   Component.removecourse( );
+			   expect(component.totalcourses).toBe(-1);
+			})
+			it("should have return if there is any course",( )=>{
+			   
+			  expect(component.courses).toContain("html");
+			  we can also check with indexes
+			   expect(component.courses[0]).toContain("html");
+			  
+			})
+		   })
+		   
+	INTEGRATION TESTING:(relationship between components)
+	1.import {TestBed} from '@/angular/core/testing'
+	***TestBed creates environment for integrating (test cases)
+	***we need to import async also
+	import {TestBed,async} from '@/angular/core/testing'
+	2.config: TestBed.configTestingModel({
+					declarations:[AppComponent],}) //similar to NgModel
+		***configTestingModel--method inside TestBed
+		   While creating component we get:debug element,nativeElement,classes
+		   styles,attribute,component instance,platform
+	3.app.component.spec.ts:
+	describe('appcomponent testing happy flow',( )=>{
+				beforeEach(async(()=>{
+					TestBed.configureTestingModule({
+					declarations:[AppComponent],
+				}).compileComponents( ); //compiles and creates environment
+				let fixture=TestBed.createComponent(AppComponent)
+				//fixture acts like wrapper it wrapes data,logic,templet
+				app=fixture.debugElement.componentInstance
+				
+	})
+	4.app.component.ts:
+	 export class AppComponent{
+	   title='hello',
+	   age=20
+	   hello( ){
+	   console.log('hi');
+	   }}
+	   ***fixture.detectChanges( ); //inside every spec to detect changes made
+	  5.const compiled=fixture.debugElement.nativeElement;
+	  nativeElement-->holds all root tags
+	  ***"By" selector-- import it ***By belongs to platform
+	  expect(compiled.querySelector('h1').textContent).toContain('Welcome');
+	  let de=fixture.debugElement.query(By.css('.heading')); //.property for class
+	  let element:HTMLElement = de.nativeElement;
+	  expect(element.innerText).toEqual('Welcome to hello')
+	  
+	  

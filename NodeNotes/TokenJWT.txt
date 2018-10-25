@@ -1,0 +1,39 @@
+From webclient(postman) we raise a request for registration to REST Server(nodejs)
+nodejs search for this particular session in side database...From db we get
+a response to nodejs server similary for login also webclient(angular-postman)
+raises a request to nodejs server again node js server searches for this sessioninfo 
+inside db again sends back response(auth:true)to webclient. 
+the db maintains a Identity storage for this purpose but previously they used
+to store in the for of sessions now they are using tokens...
+Identity storage:
+1.inside we have a SESSION(storage) --holds user object completely
+   as many as users are there session have that many user objects
+   **session is on based server it slow down when a number of objects
+   created ---so we have SESSION SERVER--but problem here is infrastructure
+    so we use token based authorization--generating token(encrypted)--not storing
+	anywhere---just a string--will be passed to client(browers)--chrome has different
+	storage system--now identity storage is taken by client...so server is safe from
+	extra storage system. for 50,000 user only one string(encrypted) is holded by client
+	in different browsers.
+2.we can store anything inside token 
+3.we working with token we have JWT-JavaWebToken(token based system)
+	1.jwt official website
+	2.jwt just a string- this token will be of 3 things
+			1.header -- contains algorithm(encrypting--HS256)&& meta info about token
+					{
+					   type:'jwt',
+					   alg:HS256
+					   }
+					   **same algo for decryption
+			2.payload-- we can put complete user object put inside payload --it basically
+						contain data..
+						
+			3.signature--design secret key(for encryption) same for decryption
+			**more than 40digit string
+	3.similer to session, token will have expire In time--token valid till that particular
+	  time.
+	
+	goto npm-->jwt-->jsonwebtoken:
+			npm install jsonwebtoken
+			
+

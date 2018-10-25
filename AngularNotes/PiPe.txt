@@ -1,0 +1,9 @@
+PIPE
+1.Not changing element,but it helps reformat element.
+2.Build-in-pipes:
+		generating pipes
+			ng g pipe foldername/filename
+			Ex:
+		       ng g pipe pipes/summary
+			   
+			   

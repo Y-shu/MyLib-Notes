@@ -1,0 +1,79 @@
+Integrating Bootstrap in Angular:
+1.Adding Bootstrap From CDN(Content Delivery Network)
+   add two files:
+		a.Bootstrap CCS file
+		b.Bootstrap JavaScript file
+		c.The JavaScript parts of Bootstrap are depending on jQuery. 
+		   So we need the jQuery JavaScript library file too.
+		   
+		   Open file src/index.html and insert
+
+				the <link> element at the end of the head section to include the Bootstrap CSS file
+				a <script> element to include jQuery at the bottom of the body section
+				a <script> element to include the Bootstrap JavaScript file at the bottom of the body section
+		 Once done-->Try it out by opening file src/app/app.component.html and
+                     		 insert the following HTML template code.
+							 
+			**You can also change to another Bootstrap theme, e.g. from Bootswatch (https://bootswatch.com/). 
+				On the Website just select a theme and click on the “Download” button. The corresponding 
+				bootstrap.min.css file opens in another Browser window, so that you can copy the URL.***
+            inside index.html:
+			   <link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
+
+2.Downloaded B.S
+    Bootstrap
+
+app-->assets (will have public data)
+create a dir css--->add bs file here,add jquery file and popper
+
+add asset inside index.html---->href="./asset/css/album.css"
+
+URIs Mapping:
+1./home -->index.html
+2.Angular Routing: Routes from one position to another position.
+3.work with angular router
+		angular core library--->import {Routes,RouterModule} from '@angular/router'
+		(inside app.module.ts)
+		 1.create routing(initilize route)
+		 //Routes is of interface type so here v r implementing appRoutes:Routes
+		    4r creating routes---const appRoutes:Routes=[{path:'home',component:AppComponent},
+																		{path:'photo',component:PhotoComponent},
+																		{path:'user',component:UserComponent},
+																		{path:'homedata',component:HomeComponent}]
+																		*** genarate PhotoComponent,UserComponent,HomeComponent
+																	***add these componenets inside declarations 
+		 2.Register routing
+		 --->appRoutes is one type of module
+		 --->this module is to be registeredya
+		 ---->
+		 --->goto import section inside app.module.ts
+		       RouterModule.forRoot(appRoutes)  //registering using forRoot....
+		 3.Add Router Outlets
+		 --->goto app.component.html
+		---->add <router-outlet></router-outlet>
+		 
+---->As angular is not the thing which re loads the page it works on SPA
+so in place of href we use routerLink.
+---->href reloads complete page...
+
+
+------>but routing file should not to be in app.module.ts so we take another file to satisfie 
+->app-routing(folder name...Any name we can take) 
+->inside app-routing.module.ts
+->copy  all route related stuff into the above file....
+---->we use decorates once created component,simililary with modules
+ import {NgModule} from '@angular/core'
+ 
+ //decorater
+ @NgModule({
+ declaration:[
+ //we will register all files here],
+ imports:[RouterModule.forRoot(appRoutes)],
+ exports:[RouterModule]})
+ export class AppRoutingModule( );
+ --->goto app.mosule.ts add AppRoutingModule inside import , as we are exporting this module to app.
+ module.ts 
+ 
+ **Dont add / in the beginingof routing by default 
+ >>redirecting toward not found component
+ '**' use in place of router name and map component:NotFoundComponent.

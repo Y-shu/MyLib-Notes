@@ -1,0 +1,40 @@
+AngularSERVICES:
+***module for binding components together...
+1.Services allows us to share data across different classes.
+**ngFor is directive
+2..html
+    <h1>{{title}}</h1>
+	<p>{{post}}</>
+	<ul>
+	<li *ngFor="Hello..">{{post}}</li>
+	<ul>
+	
+	  <h1>{{title}}</h1>
+	<p>{{post}}</>
+	<ul>
+	<li *ngFor="Hello..">Head:{{post.head}} Body:{{post.body}}</li>
+	<ul>
+3..ts
+title:string="Hello everyone..";
+	posts=[{head:"First",body:"Hello"},{head:"second",body:"Hello2"},{head:"third",body:"Hello3"},
+	{head:"Fourth",body:"Hello4"}]
+	
+	
+---->for services--->we use seperate class 
+      app--->file(posts.service.tsc)
+       posts.service.tsc:
+			class Posts{
+			//object
+			posts=[{head:"First",body:"Hello"},{head:"second",body:"Hello2"},{head:"third",body:"Hello3"},
+	{head:"Fourth",body:"Hello4"}];
+	
+	          sendPost(){
+                       return this.posts;
+}
+
+      ----->export sevice class	
+      ------>goto not-found.component.ts
+				postsObj=new Posts();
+				posts=this.postsObj.sendPost( );
+				
+	------>

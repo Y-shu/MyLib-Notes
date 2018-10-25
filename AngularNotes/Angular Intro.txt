@@ -1,0 +1,121 @@
+
+Angular1-->Java Script-->Object Based Language.
+Angular2-->Type Script-->Object Oriented Language.
+
+Angular2--> is a frame work which helps us to create front end server! with nodejs and npm!
+
+ANGULARJS:(it is library)
+1.This is java script based small frame work 
+2.Open Source
+3.MVC Driven Architecture	
+4.Utilise HTML as template language by extending HTML attributes(DOM) with directives reneders
+  dynamic data.
+5.This FrameWork was not Mobile Compatible.
+6.Angular Js was Slow.
+7.$Scope and Controlleres was major building blocks.
+8.Managing Routing in angular was complicated and less modularity here.
+9.Development was a library
+
+ANGULAR2:
+1.This is a type script based frame work for web app development.
+2.Open Source.
+3.Component Driven Architecture.
+4.Here also directives are used to perform DOM Manipulation along with data binding...
+5.This FrameWork is Mobile Compatible.
+6.This is far faster frame work as compared to angular js.
+7.$Scope and controllers was replace with component as main block.
+8.Routing is very simple here.
+9.Development was a nodejs platform oriented.
+ ******PREREQUIST FOR ANGULAR2: nodejs.
+ 
+ --->check for versions of nodejs and npm should be more than 8.
+ --->node -v and npm -v
+ --->npm install -g @angular/cli
+ --->ng (ng command to initiate angular)
+ --->ng version(to get in to angular cli along with version)
+
+CONFIG ANGULAR:
+installation + setup
+setting up new project--->ng new projectname
+
+1.SPA --->Single Page Application
+2.Angular J.S is completely based on SPA(dynamically rewritting the current page)
+3.Angular application parts as component --->side nav component,login component,header companent...etc
+like modularity
+4. Distributed Enviroment---->components.
+5.these building blocks are "components"
+6.my-app-urs:
+  src-app:main component or default component(we bring them into main component-app)
+  
+7.Building Blocks of Angular:
+	a.Components(Angular is Component Driven Architecture)
+	b.Module(groups components together)
+	c.Services(Services allows us to share data across different classes.)
+	d.1.template(html code+css code)
+	   2.Directives(DOM manipulation)
+	   3.pipes(DOM)
+	   4.Events(DOM)
+	   
+8.Components going to bind certain things together
+9.Modules helps us to bind similar things(components) together.
+	Ex:headerComponent ,footerComponent,bodyComponent.
+10.Communicate between two or more classes --->services.Every thing is a class in angular.
+     Including Components and Modules.
+
+11.Angular Component:
+    Is a binding agent which binds 3 things together
+	a.template(html and css code)
+	b.data(data coming from back end server.this can be hardcoded data(static data) 
+					or dynamic data from server)
+	c.Front End Code.(Front end logic-->Example:Validation)
+
+12.Runing application:
+     bundling files:
+	 
+	 ng serve --port portnumber
+	 
+	 ***angular bundling tool(webpack)--->It bundles all files from .ts to .js
+	  1.main.js file--->main logic
+      2.polyfills-->conversion file(fills the gap btw higher and lower level files)
+	  3.runtime.js--->execute inside Js 
+	  4.styles.js--->related to css styles
+	  5.vendor.js--->third party tools 
+	  
+	13.Main use of these bundling is to provide security.... by ctrl+u we can see only certain files in brower
+	
+	14.Main module.ts file
+	      main.ts-->(bootstrap)--->AppModule---->(load)--->AppComponnet---->Data+Logic+Templet
+		  
+	15.Component Decorator:(Meta Information about component)
+	****app-root is html selector (by default it will be added in index.html)
+         selector:helps to navigate 
+		 templateUrl:.path of html files of that particular component.
+		 stylesUrl:.we can add any no.of css files here.....(Basically it is an array).
+	16.Creating Component:
+	We can create Components using two methods--->
+	   1.Angular CLI
+	      ng g(global) c(component) componentName
+		  the above command creates commponent with component.css,commponent.html,component.spec.ts,
+		  component.tc these four files are created....
+	   2.custom type
+	      genereally we create a folder by name and add files then...
+		  we manually create files by name componentName.component.css(html/spec.ts/ts)
+		  then...
+		    a.  1.Import Component from core library
+				 import {Component} from '@angular/core'
+				2.Decorate:
+				    @Component({
+					selector:'app-componentName',
+					templateUrl:Uri for html component,
+					styleUrl:[array of style.css files]})
+			    3.Exporting this class 
+				   export class ComponentName{
+				   constructor() {}
+				   }
+		b.	Import inside app.Module.ts:
+			import {Component} from 'ComponentPathName'
+			
+		c.	Populate component by going inside app.component.ts:
+			<app-componentName></app-componentName>
+		  
+	

@@ -1,0 +1,5 @@
+AngularRouting:
+1.users will be able to navigate the app
+2.***Add the AppRoutingModule***
+    -->load and configure the router in a separate, top-level module
+	-->this particular module should be dedicated to Routing only.

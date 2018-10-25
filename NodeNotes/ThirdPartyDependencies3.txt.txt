@@ -1,0 +1,78 @@
+THIRD PARTY MODULE:
+1.Dependencies are needed
+2.npm(node package manager):
+   -->project creation and management(MVC Architecture)
+   -->npm helps us to manage dependencies,run code,test code
+   -->Automatic downloading dependencies
+   ***nodejs dependencies are managed by NPM or YARN
+   ***Java dependencies are managed by ANT,MAVEN,GRADEL
+   ***.Net -->Nant
+ 3.how npm download dependencies automatically?
+    Some centralized repository have dependencies for npm --->npm central Repository 
+	
+4.npm init --> initilized the project 
+   a.package.json file is the registry file for dependencies
+   b.Once hitting npm init it will asks for some details after entering hit yes gives you a 
+       package.json file.
+5.two types of dependencies:
+		a.Local Dependencies-->avaliable for Project.
+		b.global Dependencies-->avaliable for System.--->example: TypeScript,Angular CLI
+6 installing dependencies:
+        a.npm install packagename --save (install and get registered inside package.json)
+		   example:
+						npm install mongodb --save
+		    after installing mongodb,we get a file --->package-lock.json and one directory-->node-module
+		
+		    node_module-->library to maintain all our packages...
+			***we dont need to send node_module to production env but by hitting npm install we can install
+			all dependencies related to project--->npm install
+		b.add express:
+		    npm install express --save.
+		c.npm install (install all dependencies realated to project).
+		d.npm uninstall dependencies-->removing dependencies.
+		e.Two type of dependencies:
+		   ***We dont want to push entire testing that we have done at our local system to production env
+		        then 
+		   Development Dependencies or Production Dependencies
+		   Development Dependencies:
+		      npm install DependenciesNAme --save-dev
+		   Production Dependencies:
+		     dependencies section inside package.json is ment for production 
+			  npm install --production
+		 f.System level Dependencies:/user/local/lib/
+		    sudo npm install -g DependenciesNAme   example: nodemon
+			
+			cd 
+			pwd
+			/usr/local/lib/
+			there node_module we can see...
+		g.to search dependencies
+            npm search DependenciesName	
+7.Express is a framework(halfly developed code)		
+    -->default file is index.js file
+    -->require('express')
+    -->node_module->express->index.js->/lib/express.js->express.js---->important file to be focused.***
+ 8.npm to start mt project:
+    goto package.json
+    under script section:
+    "start":"node server.js",
+    **** hit npm start***
+    node need of node server.js....Just hit npm start.
+		
+EXPRESS:
+		
+		Express 3.x is a light-weight web application framework to help organize your web application into an
+		MVC architecture on the server side.You can then use a database like MongoDB with Mongoose (for modeling)
+		to provide a backend for your Node.js application. Express.js basically helps you manage everything, from
+		routes, to handling requests and views.
+		
+BODY-PARSERS:
+		
+		in order to read HTTP POST data , we have to use "body-parser" node module.
+		body-parser is a piece of express middleware that reads a form's input and 
+		stores it as a javascript object accessible through req.body.
+		With express you can read any data inside HTTP request, such as headers req.headers (array), you can read
+		the body of the http packet as req.body
+		
+		
+   

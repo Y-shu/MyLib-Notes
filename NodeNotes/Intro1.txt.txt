@@ -1,0 +1,54 @@
+1.JavaScript is browser based(no system resources)....
+unlike c and c++ they are platform based(On the top of O.S means they
+utilize system resources).
+
+2.JavaScript:
+   ---->Asynchronous code
+   ---->Call Back
+   ---->Event Driven
+   ---->Prototype 
+   these things makes J.S famouse inorder to makes these things avaliable
+   on system level we use NODE.
+   
+3.Node is J.S run time environment.Inside node there will be J.S engine with certain native libraries
+   and core modules....
+	  NODE gives:
+      a.Access to system resources
+	  b.Event Driven
+	  c.Asynchronous 
+	  d.Allows to execute J.S (BackEnd JavaScript)
+ 
+4.Rending engines :
+		chrome>v8(open source JavaScript Engine)
+		I.E>Chakra
+		Morzilla>SpiderMonkey
+		
+5. Install and Download:
+	--->Nodejs(WebSite)
+
+6.node -v (version of node J.s)
+
+7.nodejs comes with  node and npm(node package manager)--->Single Package
+
+8.npm -v (checking version of npm)
+
+9.hit node --->Node shell will be opened (Execute J.S here)
+
+10.Node Shell is REPL terminal.Read Evaluate Print Loop.Why to REPL--->Debugging. Ctrl+C(twice)
+to come out of REPL
+
+11.Node Js is SINGLE threaded...*
+
+12.Node J.s Global Objects(hit global inside REPL to see object)
+		global --------------> in brower it is (window)
+		console------------->in browers it is(console)
+		process------------->in browser it is(document)
+		
+13.To Execute J.S file inside Node:
+		node filename.js
+		
+14.process.openStdin( );
+
+15.Converting buffer content to string:
+	toString( );
+	

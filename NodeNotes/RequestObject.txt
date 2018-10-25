@@ -1,0 +1,14 @@
+REQUEST OBJECT:
+-->Once we hit url the function holding it will get triggred. function is having req and res objects
+-->req is a data ....user can send data using req object only
+    req have:
+        query string
+        request params
+		rq body
+		req header
+    req is having a method called url.
+	extra data appended to url is call "QUERY STRING"
+    **res.send is used to send data.
+	**If server is sending back same response back that time it gives us the status code 304:not modified
+	**send File of res is used to send req .. can take only absolute path so no hard coded path is allowed
+	   we require path....

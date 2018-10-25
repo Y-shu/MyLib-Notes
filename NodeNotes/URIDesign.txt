@@ -1,0 +1,9 @@
+URL DESIGN:
+-->Never give method name as uri name
+-->never alpha numeric values
+
+Method                  URL                   Description
+GET  					/hotels					getHotelData
+POST					/hotel					addingHotelRecord
+GET                     /users					getAllUsers
+GET 					/users/userId		getbyuserId

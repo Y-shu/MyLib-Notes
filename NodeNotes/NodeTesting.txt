@@ -1,0 +1,168 @@
+Two type of tests:
+TDD-Test Driven Development
+  done by code developer itself
+  -->check each and every line of source code
+  -->done based on customer requirments...app is developed and write test cases
+BDD-Behaviour Driven Development
+  
+1.nodejs --->Built in library --->assert
+2.Mocha – the core framework: it provides common testing functions including "describe" 
+and "it" and the main function that runs tests.
+  
+****Node.js
+		-->assert method-->Build in core library inside nodejs
+		-->where as describe and it methods--> methods inside mocha 
+		-->TDD-->we suppose to check every functionality..
+		 --->test runner: mocha -->mock test-->testing
+		 -->Chai----> assert library---->1.assert
+													 2.should
+												    3.expect.
+													
+		*****Install mocha:-->install global (-g)
+												 npm install -g mocha --save 
+		                            -->development:
+									             npm install mocha --save-dev or
+									   
+									-->create sample.test.js folder:
+									            
+		 ****Describe block and it method--->functions for testing:
+						-->describe( ) --->test block wise-->all methods together it tests-->multiple tests cases and be tested
+						    ** describe has multiple it ( )  methods inside..
+						-->it( )--->test individullay 
+						
+	                    -->Done---done( ) tells its the last line of test cases
+						
+						--->hit mocha to test once done with code....
+						
+						--->mocha:
+						        pacjkage.json
+								under-->script:
+								"start":"node server.js",
+								"test":mocha  "folder name for test"
+								**instead of mocha we use npm test
+								
+		METHOD IN ASSERT:
+		SYNTAX:
+		   assert("True","Some Message")---->When test is Passed
+		   assert("False","Some Message")---->When test is not passed
+		   
+		   
+		   
+		   1.assert.ok(Boolean Value,"Some Message");
+		     assert.ok works same as assert.
+			 
+		   2.assert.equal(actualValue,expectedValue,"Some Message");
+		     this method checks weather actualValue is equal to expected
+			 Value or not.
+			 
+		   3.assert.fail(actualValue,expectedValue,"SomeMessage");
+		     this methods works only for negative conditions
+			 actualValue should not be equal to expectedValue.
+			
+		   4.assert.strictEqual(actualValue,expectedValue,"SomeMessage");
+		     strictEqual "===" checks with data typing
+			 
+		   5.assert.notEqual(actualValue,expectedValue,"SomeMessage");
+		     actualValue and expectedValue should not be equal.
+			 
+		   **testing mvc architecture we require framesworks:
+		      mocha -- nodejs testcase runner
+			  
+			  mocha provides two functional blocks they are describe and itive
+			  describe-multiple test cases
+			  it-single test case.
+			  
+			  install :
+			  npm install -g mocha --save-dev
+			  as it is development dependenice.
+			  Syntax:
+			  
+			  it(message,callback);
+			  
+			  describe(message,call back{
+			  it(message,callback);
+			  it(message,callback);
+			  it(message,callback);
+			  })
+			  
+			  
+			  hit mocha to run test
+			  
+		
+		   
+								
+		****chai(assertion behaviour):MODEL
+		
+		1.Advanced functionality.
+		2.more testing method.
+		3.TDD-Test Driven Development(checks for functionality) and 
+		  BDD-Behaviour Driven Development
+		  
+		       describe(' ', (  ) =>{
+			          
+					  it(' ' , ( )=>{ });
+					  expect(collectionName).to.have.property('field1').to.equal(Hotel is ..");
+					  expect(collectionName).to.not.have.property('field1').to.equal(numberValue);
+					  expect(collectionName).to.not.have.string(numberValue);
+					  expect(collectionName).to.be.a('field1').to.equal(' ');
+					  done( );
+					  
+					  //as many as it ( )  we can have inside describe ( )
+			    }) 
+			   
+			   
+		       should and expect is ---behaviour driven(BDD)
+			   assert---test driven(TDD)
+			   test: framesworks(2 types)
+			       -->supertest and chai http(caller)
+				  **installing chai: npm install chai chai-http --save --dev(development)
+				***HOW TO TEST MODELS?
+				     --->package json:
+					          under script:
+							  "start":"node server.js",
+							    "test":"mocha --recursive"--->checks for all testcases inside test directory
+						 --->require expect: 
+						         var expect = chai.expect;
+								 
+				behaviour:
+				       .to.have
+					   .to.not.have
+					   .to.equal(+itive)
+					   .to.not.equal(-itive)
+					   .to.be.a(type)
+				
+			Checking Routes & Controller:
+			require assert 
+			require chai
+			require chai-http
+			require server
+			let should = chai.should(  );
+			1.first call -server--->controller-->Router
+			2.chai.use -->for httpmethods
+					chai.use(chaiHttp);
+			3.res is correct-->200
+			4.data in the format of json if it is json
+			5.res.body -->res should be an array
+			6.res.should.have.status(200);
+			   res.should.be.json;
+			   res.body.should.be('array');
+			   res.type.should.equal('applictaion/json');
+			   res.body[0].should.have.property('_id');
+			      res.body[0].should.have.property('name');
+				     res.body[0].should.not.have.property('age'); ---->verifying for negative
+					    res.body[0].should.have.property('reviews');
+						done( );
+			   
+		***test   (folder)
+		      test-controller
+			  test-model
+			  test-utilies
+			  
+	    ***Istanbul with mocha -->code coverage 
+		   npm install --save-dev nyc
+		   OR
+		   npm install istanbul --save-dev
+		   
+		   package.json
+		   under scripts:
+		       "test":"nyc mocha --recursive --time"

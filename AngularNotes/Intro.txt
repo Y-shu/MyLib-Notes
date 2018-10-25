@@ -1,0 +1,54 @@
+ANGULAR
+1.ANGULAR is famous abouts its Single Page Application(SPA).
+2.We make use of DOM Manipulations in ANGULAR..
+3.We use TypeScript inside ANGULAR
+4.Angular Js is only for Desktop based Applications but Angular2 is compatible for all devices...
+5.Angular2: faster,having server,databinding,AngularCLI,having many environments...
+6SPA-Single Page Application...is web application or web site that interacts with the user by dynamically
+rewriting the current page rather than loading entire new page from a  server...
+7.Node should be above 8 then only it will be compatible with angular2.
+8.......Creating Project structure:
+			[we should have node & npm before we install angular]
+			a.sudo npm -g @angular/cli(installing angularCLI)
+			***we get cli along with packages with typescript***
+			b.ng -v (to check version)
+			c.ng (to run)
+			d.ng new ProjectName
+			***Package.js is register to maintain all dependencies***
+			e.ProjectName: ng serve(runs application into development environment)
+			f.4200 default port for Angular.
+			g.ng serve --open/ng serve -o(opening app in brower happens automatically)
+			h.ng serve -o --port portnumber
+			i.ProjectStructure:
+				-->e2e-end to end testing
+				-->angular.json(main file)
+				-->package-lack.json(all dependencies)
+				-->src(source  src folder. All Angular components, templates, 
+				          styles, images, and anything else your app needs go here.)----->app(main component)
+										**asserts-->where we can store images,anything on wholesale we want to add
+										                   ex:bootstrap files....
+										**favicon-->top icon
+										**index.html-->home page
+										**Karma.con.js-->test file (ng test)
+										**main.ts-->main thread
+										**style.css-->default css file throught project
+									    **Polyfill.ts-->Different browsers have different levels of support of the 
+										                     web standards. Polyfills help normalize those differences.
+9.Angular --Uses typescript(MicroSoft)--Object Oriented Programming Language
+10.Browser cannot understand TypeScript.But ts has 1.Objects
+																			     2.Inheretance
+																				 3.Polymorphism
+																				 4.Oops.
+																				 ***ts is superset of javascript**
+11.We code in ts & then bundle our code downgrading to JavaScript code as browser cannot understand
+     typrscript.
+12.For compiling ts to js we requires type script compiler.Process of compilition from ts to js is
+    called "Transpilation".
+13.js is basically loosely typed and ts is strictly typed (type validation)
+14***Installing TypeScript****
+				sudo npm -g install typescript
+				tsc --version(TypeScriptCompilation)
+				converting .ts to .js-->tsc filename.ts
+				running--->	node filename.js
+
+										

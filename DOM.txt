@@ -1,0 +1,61 @@
+DOM - Document Object Model
+1.window.document
+2.window obj is root object inside browser...
+3.Console obj
+4.window.innerwidth
+5.window.height
+6.when we write an function this should be appened to window object
+
+dom.js
+function sampleFunction(){
+console.log(window);
+console.log(dowcument);
+}window.sampleFunction();
+
+7.Build in methods :
+//creating an element by name section 
+var section = document.createElement('section');
+
+//if adding something inside section tag we use innerHTML
+//we can pass text along with tag inside of innerHTML
+section.innerHTML = '<h1>This is Dynamic Text.....</h1>'
+
+//insert this element where?? 
+//inserting into body say suppose
+//console.log(document.head);
+document.body.appendChild(section);
+console.log(document.body);
+
+8.Another method to add tags...Nested Child Elements:
+ var section = document.createElement('section');
+ var para = document.createElement('p');
+  var h1 = document.createElement('h1'); 
+  var input = document.createElement('input');
+  
+
+  document.body.appendChild(section)
+  document.body.appendChild(para)
+  document.body.appendChild(h1)
+  document.body.appendChild(input)
+
+  console.log(document.body)
+  
+ 9.But i want to append para h1 input to section not to body then
+ //Added Nested Element
+ section.appendChild(para);
+ section.appendChild(h1);
+ section.appendChild(input);
+ 10.Now we need to add text to this elements
+ 
+ //innerText for geneterating text element
+ //this should be done before appending to section element
+ h1.innerText='This is Dynamic Text';
+ para.innerText = 'This is Para';
+ 
+ 11. .innerHTML is for getting the elements and setting the elements...
+ innertext is to add text to html element
+ 
+ 12.outerHTML (tag + innerHTML) if we apply something to outerhtml the inner elements 
+ also get modified
+ 
+ 

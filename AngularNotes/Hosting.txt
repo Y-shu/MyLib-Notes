@@ -1,0 +1,85 @@
+3 Vagrant machines:
+1 for -->front end
+2 for -->Back end
+3 for -->REST (Back end Server)
+
+-->create repo for each(big bucket)
+-->create VM's:
+		mkdir hosting
+		cd hosting
+		
+		mkdir hotel-rest(creating server)
+		mkdir hotel-front
+		
+	***hotel-rest:install vagrant
+		-->vagrant init
+		config vm.box="ubuntu/trusty64"
+		enable public 
+		-->vagrant up
+		-->vagrant ssh
+		
+	***same with hotel-front:
+		we can also directly initilize 
+		vagrant init ubuntu/trusty64
+		enable public network
+		vagrant up && vagrant ssh
+		
+	***Hosting node server	
+		ifconfig and copy ip and paste (back end)
+		install node with app
+		install from original website
+		put everything inside you node server
+		be a root user and do everything
+		->sudo -i
+		->goto github /buscket 
+		   git clone and path of backend link
+		->as node_module is not there so 
+		   npm install
+		   
+		   npm install --save bcryptjs
+		   vi controllers/auth.controller.js
+		    change bcrypt to bcryptjs
+			
+			npm start
+			connection successful!
+			
+			***Iptables???
+			
+			Take this backend and make it run background
+			node process manager(pm2.io)
+             sudo npm install -g pm2
+				-->production envirronment-->pm2 filename.js(daemonized)
+				started creating demo process
+				local-->nodemon or node filename.js
+				**demo process-->long running process node server should 
+				be a demo process any server process is a demo process
+	
+		 ** to host angular application we use apache server 
+		   install apache server
+		   *stop firewal before doing this 
+		   
+		   netstat all
+		   netstat -l
+		   
+		   hosting backend--->pm2
+		   hosting frontend--->1.build--generate artifact directory(dist directory)
+							   2.test
+							   
+							ubuntu--ufw(firewalls)--itables
+							      --apache2(weber)--
+									
+				**install apache for front end
+				
+						1.sudo apt install apache2
+						2.sudo service apache2
+						3.cd var/www/html# 
+						4.ls
+						5.***connect front end client to server
+						6.git clone path front end
+						7.npm install
+						8.rm -rf node_module
+						9.sudo npm install -g @angular/cli(install gloablly)
+						10.npm install 
+						11.ng serve(app is serving in development)
+						
+		

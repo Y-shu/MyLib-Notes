@@ -1,0 +1,158 @@
+-->Header:
+        Meta Information-->set( )
+		Mediatype: application/json (most of the cases it is json document)
+		res
+		.set('application/json')
+		.status(200).json(message)
+-->Http Status :
+status can be two types already defined or defined by our own(based on application).
+			status.json
+			expos{
+			 transcationOK: 1000,
+			 transcationFAIL:1001,
+			 transcationDeclined:1002,...............etc},
+			 users{
+			 users  : 1500.............etc}
+			code category:
+			a.Informative(100-10x)
+			b.success(successful responses) (200)-->201,202...
+			c.Redirection(redireted status code) (300)-->301,302...
+			d.clientErrors(400)-->401,402....
+			e.serverError(500)-->501,502....
+			
+			Informative: 
+			receving and telling what action is going to be performed
+			
+			success:
+			acknowledge successful
+			
+			redirection:
+			current resources is not avaliable on the give uri
+			
+			clientError:
+		    front end side errors to tell req are faulty request
+			
+			server:
+			severside errors which describe serve diffectency
+			
+			100(continue):
+			Part of the req is received by server,client can move further
+			req sending
+			
+			101(switching Protocol):
+			Jumping from one protocol to another protocal
+			**header data is going to be modified
+			ex:http to https
+			
+			102(processing)
+			req accepted action is taken but res is not yet sended yet
+			
+			200(successfulResponse)(OK):
+			req has been successful ful filled and res sended
+            **200 varies on http methods(put,patch,get,push,delete)
+			-->GET --resource has been fetched and transmitted via res
+			-->POST-- resource has been inserted and response send via resbody
+			-->PATCH and PUT is same
+			-->DELETED-- resource deleted and res send via 
+			
+			201(created):
+			resource has been created and res sended via resbody
+			
+			202(auth):
+			req given for the resource doesnt exists for given user
+			tag is added to header--res updted header with metainfo that resource
+			is not for the 3rd parties...
+			
+			204(No Content):
+			res is successful but res given as null
+			but header may have some metainfo.
+			
+			300(redirection-multiple choice):
+			navigation list will be there --users has to choose
+			muliple nav links are avaliable user can select anyone of them to 
+			load a require data.
+			
+			301(move permenatly):
+			resource has been shifted from one uri to another uri
+			
+			302(found):
+			resource uri has been found but the actual resource has been shifted to 
+			somewhere else
+			
+			303(see other):
+			resource has been on another uri
+			
+			304(not modified):
+			resource has not been changed same as previous resource
+			
+			307(temp redirecting):
+			resource has been shifted to another uri but changes are temporary
+			
+			308(permenent redirecting):
+			resource has been shifted to another permenatly server helps to navigate to another
+			
+			400(Client)
+			401:(unauthorised):
+			402(payment required):
+			paid services-to access resource payment 
+			is required..
+			
+			403(forbidden):(hidden)
+			not allowed to see certain info related to hosted place
+			will be given for hidden data that are not allowed for a normal user.
+			client wont have a right access to get a resource
+			
+			404(page not found):
+			the resource client want it is not avaliable...
+			
+			405(method not allowed):
+			on certain resource server don't want to execute certain specific
+			methods most commonly delete method that time http method not allowed
+			
+			406(not acceptable):
+			server has taken req,while manipulating req it gets to know that it is not
+			acceptable...after certain time serve denies req.
+			
+			408(req timeOut):
+			it means that server would like to shutdown the req after a certain period of time..
+			
+			409(conflicts--errors)
+			410(req gone):resources client is looking for not longer avaliable.
+			              permenently deleted from server
+						  
+			500:
+			(server error response)
+			internal server error--server encountered a situation that he dont understand
+			what action to be taken...
+			
+			501:(not implemented):
+			req given by the client is not implemented yet at the time we pass in header
+			section.
+			
+			502:(bad gateway):
+			the communication channel has error while sending a response...
+			
+			503:(unavaliable service):
+			server is unavaliable to take any req coz server is down... due to over load or
+			maintainance
+			
+			504:(
+			communication channel time out...
+			
+			507:(server insufficent storage)
+			511:(network authentication)
+			
+		    
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				

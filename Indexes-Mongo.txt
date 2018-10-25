@@ -1,0 +1,87 @@
+Indexes are data structure that stores collections data in easily travesable format:
+Indexes help with:
+1.For Executing queries and find documents that are matched the query 
+   criteria without searching the entire collections
+2.Limit the number of document to examins .
+3.Stores data in ordered document so filtering be easy.
+
+use dbname;
+for (i=0;i<1000000;i++){
+db.collectionname.insert({
+	item_id:i,
+	name:`item_${i}`,
+	location:{city:`New York_${i}`,state:"N.Y",pincode:`1000${i}`}
+});
+}
+
+types of indexes:
+1.DefaultIndex(_id field)---->it executes much faster
+2.Single Field Index
+3.Compound Index
+4.MultiKey Index
+
+DEFAULT INDEX:
+how to check indexes entered?
+
+//this showes one ID :Key actually 
+//if asceding index _id:1,
+//if desceding index _id:-1
+db.collectionName.getIndexes();
+
+//to get one record with one specified Index Number
+db.collectionName.find({_id:indexNumber});
+
+//to check execution time....
+db.collectionName.find({_id:indexNumber}).explain(executionStats);
+
+
+//asceding
+db.collectionName.createIndex({_id:1});
+db.collectionName.getIndexes();
+//desceding
+db.collectionName.createIndex({_id:-1});
+db.collectionName.getIndexes();
+
+
+db.collectionName.find({_id:indexNumber}).explain(executionStats);
+
+###Creating index for embedded document:
+db.collectionName.createIndex({"embedded Field":1});
+db.collectionName.getIndexes( );
+example:
+db.items.find({"location.pincode":1000});
+db.items.find({"location.pincode":1000}).explain(executionStats);
+db.items.find({"location.city":"New York_21212"}).explain("executionStats");
+
+//deleting a index(drop)
+db.collectionName.dropIndex({queries });
+example: db.items.dropIndex({"location.city":"NY"});
+
+//all indexes
+db.collectionName.dropIndexes( );
+//default index will be there remaining all will be deleted.....
+
+Compound Index:
+????????
+combination of multiple indexes...
+ 
+ Multi Level Key:
+ a key for multiple values-array
+ use products;
+ db.ratings.insert([{
+ type:"food",items:"cake",rating:[6,4,1]},{type:"food",items:"cake",rating[5,7,6]}])
+ 
+ Capped Collection:
+ Fixed sized Collection..............
+ restricting size of collection....ex:max certain no.of collection.....
+ 
+ db.createCollection("collectionName",{capped:true,size:10000});
+ //size will be in bytes..........
+ //checking capp or  not
+ db.collectionName.isCapped( );
+ //after collection got created then...
+ db.runCommand({"convertToCapped":"collectionName",size:10000});
+ 
+ //documents restriction
+ db.createCollection("collectionName",{capped:true,size:10000,max:200});
+ 

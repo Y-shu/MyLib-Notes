@@ -1,0 +1,41 @@
+REQUEST BODY:
+--->Along with get req we can pass query as query string and query param but not body..
+--->we require BODY PARSER to get req body
+      **npm(website)-->body-parser(middleware)
+	             npm install body-parser --save
+	             thuis module provides the following parser:
+				     JOSN body-parser
+					 Raw
+					 text
+					 URL
+					 ****require this body parser inside your server.js
+					  var bodyParser=require('body-parser');
+					  then
+					  app.use(bodyParser.urlencoded({extended:fasle}));
+					  ***If we enable extended:fasle to true this means we are allowing bodyParser
+					  to read req.params,req.header,req.query but we want only req.body so we use
+					  extended:fasle.
+					  
+					  different types of data:
+					  //allows json data as body
+					  app.use(bodyParser.json('type of application'));
+					  example:
+					       app.use(bodyParser.json(type:'application/json'));
+						   OR //**allows all type of data all media type but data processed as buffer
+						     app.use(bodyParser.json(type:'application/*+.json'));
+						   
+					//allowing text inside 
+					     app.use(bodyParser.text(type:'text/plain'));
+						  app.use(bodyParser.text(type:'text/html'));
+						   app.use(bodyParser.text(type:'text/xml'));
+						   
+				  //allow raw 
+				  app.use(bodyParser.raw('text/plain') );
+				    **allows all type of data all media type but data processed as buffer
+				   app.use(bodyParser.text(type:'text/*'));
+				   
+				   //we can limit a buffer
+				   app.use(bodyParser.text(type:'text/*',limit:'100kb'));
+				   
+				   
+						  

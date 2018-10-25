@@ -1,0 +1,21 @@
+If token -->user logged in user
+if not token-->user not logged in
+we should have a storage component from server side....
+**  *ngFor-->ittirative 
+     *ngIf-->(angular4)
+	 
+****Route Gaurding:
+      we are going to gaurd route with some token generation(login functinaliaty)
+	  ng g guard folder name/ folder
+	  --->router gaurd observes every single url same like activated routes
+	  **ONLY related to U.I(Front End)
+	  1.front
+	  2.create Route
+	  3.RegisterRoutes(providers)
+	  4.Add routing to routing files
+****Token Interceptor:
+      --->its a service
+	  1.create service for token(injected authservice)
+	  2.done request
+	  3.
+     

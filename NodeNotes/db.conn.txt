@@ -1,0 +1,15 @@
+//register your schema here--we can register schema inside our server.js but we register inside connection file only
+// require('./hotels.model');
+//document insertion version ???? __v
+//findById -->is method inside mongoose it can be replaced by findOne method..
+//INSERTING A RECORD TO HOTELJSON 
+//two ways to insert data to our db -->creating object and using save method or use create method these two methods
+//are from mongoosejs
+//for every nested schema _id field is generated!
+//In case we want to declare any field we should goto schema declare there or else it will not be in db
+//making field as required field-->make that field as object mention type:String/Number and required:true
+//we can set max and min values for required field....for default values default:5/6/7/..number make default as string
+//"default"-->coz in javascript also we are having default keyword so inorder to make it schema related thing
+//we keep it inside " "
+//we can make any field as unique example email... unique:true 
+//we have create this file to create connection with the help of mongoos.

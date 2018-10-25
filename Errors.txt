@@ -1,0 +1,56 @@
+TYPES OF ERRORs
+1.syntax error
+2.reference error
+3.error
+
+Custom ERRORs:
+try{
+
+ throw 'SOme message'
+ 
+}catch(error){
+
+}
+While throwing what we can throw?
+we can throw number,object,string,boolean....
+*we can throw undefined value also!
+
+Custome errors are defined by us:
+defined error of your own...(stack overflow)
+
+Syntax Error:
+try{
+throw new SyntaxError('Some message');
+}catch(error){
+
+}
+
+Reference Error:
+try{
+throw new ReferenceError('Some message');
+}catch(error){
+
+}
+
+Error:
+try{
+throw new Error('Some message');
+}catch(error){
+
+}
+
+Rethrow:
+throwing an error from one function to another function......
+redirection to a particular file...
+
+function functionname( ){
+try{
+ throw new anyerrortype('some message');
+}catch(error){
+   if(condition){
+   
+   }else{
+    throw error;
+   }
+}
+---->from catch we rethrow an error object.............

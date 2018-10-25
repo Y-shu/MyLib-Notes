@@ -1,0 +1,36 @@
+MODULES:
+1.Sharing data between two different files...Every single file is module in node js
+2.Taking data from module, giving to another module...
+3.We can pass-->functions,objects,methods anything from one module to another module...
+4.Mainly js file with function is a MODULE
+5.Group of files are packed together called Package.
+6.Multiple module will be under package.
+7.3different types of module:
+	a.built in module(already avaliable with node-v can import and use them)
+	b.custom module or user defined module(we generate this module)
+	c.third party module.
+8.npm world largest package management system.Its avaliable with node
+9.importing we use 
+			REQUIRE
+10.global.module--->holds information about every module we create
+		inside which we have a export objects---->so module.export()
+		
+11.we can send data in different types in ---user defined module
+		a.Entire as module
+		b.variable,constance as module
+		c.object,array
+		d.function.
+12.we can not send multiple module.export
+  for this we send them as objects
+  module.exports={
+  showMsg:showMsg;
+  showMgs2:showMgs2;
+  }
+  13.calling a functin from seperate file
+    object.functionname;
+	
+	example:
+	exportObj.first();
+	exportObj.sec();
+14.Mainly we will send functions....
+

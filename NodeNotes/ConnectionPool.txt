@@ -1,0 +1,56 @@
+CONTROL SIGNAL
+we our application connects to db server then an object(connection object) is created inside connection pool.
+***Connection pool:(we can config the size of connection pool)
+		1.one object is created
+		2.once connection is terminated connection objects is removed from connection pool
+		3.Application accidentally terminated connection object should be removed from db
+		 and from connection pool
+		4.So that we need to maintain termination signals(supposed to gracefully handled)
+		5.For one application only one connection object
+		
+LISTENERS
+-->OnListenere,OnceListener
+	Process is global object inside node
+	terminate :
+	process.on('SIGINT',function( ){ 
+		console.log("App Termination Due to (SIGINT)");
+		process.exit(0);
+	} )
+	Keyboard interruption:ctrl+C 
+-->close connection object:
+     function gracefullShutdown(signal,callback ){
+			connection.close( );
+			console.log("Mongodb Connection Closed");
+			console.log("App Termination Due to"+signal);
+			callback( );
+			}
+-->process.on('SIGINT',function( ){ 
+		gracefullShutdown('SIGINT',function( ){
+		 process.exit(0);
+		});
+	} );
+
+-->SIGTERM:App terminated accidently
+        process.on('SIGTERM',function( ){ 
+		gracefullShutdown('SIGTERM',function( ){
+		 process.exit(0);
+		});
+	} );
+	
+-->SIGQUIT
+         process.on('SIGQUIT',function( ){ 
+		gracefullShutdown('SIGQUIT',function( ){
+		 process.exit(0);
+		});
+	} );
+	ctrl+q-->quit signal
+	
+-->SIGUSR2
+		    process.once('SIGUSR2',function( ){ 
+		gracefullShutdown('SIGUSR2',function( ){
+		 process.kill(process.pid , SIGUSR2); //killing app on SIGUSR2 with pid (pid is method inside process)
+		});
+	} );
+	
+		
+		

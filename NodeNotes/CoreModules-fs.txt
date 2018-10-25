@@ -1,0 +1,17 @@
+CORE MODULES:
+----->http module
+		fs  module (file Operations)
+		url module (uri request)
+		querystring module (form data appended as queryString)
+		path module(navigate from one place to another module we use path module)
+		os  module
+		util module
+		net module
+		
+HTTP Module:
+All stuff related to http 
+
+Handling Files:
+fs module
+1.Require module----> require('fs');
+2.File Operations:read, write, appending,creating, permissions,renaming,deleting

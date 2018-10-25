@@ -1,0 +1,31 @@
+Login :
+1.Error Handling
+2.Response(+ve or _ve)
+3.Logs--->(error logs) are must as certain things are running in backend 
+		   we may not be able to get know about them.
+		   
+		   **FrameWork:
+		   In Java---Log4j--to perform login system.
+		   In Node---Log4js--to perform login system.
+		   
+		   npmjs.com:
+		   log4js---
+		   1.levels of log system:
+		      .trace
+			  .debug
+			  .info
+			  .warn
+			  .error
+			  .fatal(very big problem immediatly action is required)
+		   2.two things:
+		      level--
+			  logger--takes input and 
+		   3.If given Higer level logs then lower level get execute ---sequence is must
+					trace 
+					debug
+					infor
+					warn
+					error
+					fatal
+		   **tail is command to hit to check log from command prompt
+		   "tail filepath"

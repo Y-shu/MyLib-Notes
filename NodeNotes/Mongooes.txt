@@ -1,0 +1,51 @@
+From schemaless to schema oriented ---Moongoose
+-->replacing mongodb with mongooes. 
+-->mongooes is anyway schemaless but inside our application(node)it is 
+   schema based.
+-->Moongoose helps us to have
+      1.Basic Structure and 
+	  2.Validation for database
+	  --->Installing Mongooes:
+			npm install mongoose -save
+			
+			** Inside Java they use relation db they use ORM tools 
+			   here with nodejs --use ODM(Object Data Modelling) to 
+			   maintain documents.
+	  --->Schema Desigining:
+			1.working with MODEL(MVC)
+			2.controller(Business LOgic)-->Schema(Persistance Logic)
+			3.Relation between Business Logic and Persistance Logic-->so
+			  generating model object to map between them.
+			4.Schema exports module and controller imports it.
+			5.Till now we had a connection with generic mongodb driver but it 
+			  gives extra layer of validation.
+			6.db.conn.js(mongoose connection)
+			7.node_modules-->lib-->index.js(schema,model ...etc is there)
+			8.mongooes.connect is to connect-->this method returns a connection
+     		  object called connection
+			9.mongooes.connection --->on which we can implement eventListeners like 
+			  "on"
+			  **Here in the below example we are using on eventListeners to listen
+			    wheather error in connection or not
+			   example: var _con = mongoose.connection
+						_con.on('error',function(error){
+						console.log('Connection failed vai Mongooes');
+						console.log('error');
+			10.useNewUrlParser:true we should add this line to object... inorder 
+			    to avoid parser related errors..
+			11.go to server.js
+			   and require('./app/models/db.con'); file
+			12.Everything in Mongoose starts with a Schema. Each schema maps to a MongoDB collection
+			and defines the shape of the documents within that collection.
+			13.Desigining Schema:
+			    1.Inside models
+				2.blogs.model.js--> accquire connect with mongoose then schema
+				**Schema is a type of constructor(it allows use to create one obj)
+				3.we cannot export schema so we create an object 
+				   called: 
+				     mongoose.model(modelObject,schemaObject,collectionName)
+					 a.modelObject is just a name given by us which is used anywhere
+					   inside our code
+					 b.third parameter is optional internally what ever we give as modelObject
+					    that name get converted as collection we dont give any name!
+					

@@ -1,0 +1,33 @@
+NODE-
+1.Asynchronous(blocking request)
+2.Event Driven
+3.Single threaded...
+
+Single Thread:
+1.Java is multi threaded..(thread--> major process in which sub process will be generated to perform task)
+2.Coz of multi thread lot much of resources are being utilized from our platform which makes it out dated.
+3.But in nodejs --->it is single threaded....
+
+      req1	-------->					
+	  req2   -------->
+	  req3	------->			server.js					
+	  req4	------->			(app.js)         ----->Event Queue-------->EventLoop 	--------threadPool(working thread)
+	  req5   -------->			Main thread					                  (single thread)
+	  
+	  1.req comes to server.js ----entire thing gets initilized(nodejs)
+	  2.event queue-this get loads into ex:functions...
+	  3.they get loaded into event loop(observerable)-->it serves one by one based on req..
+	  ****listening nature of cache
+	  4.a call back ----> certain time--->
+	  5.if req is non-blocking(FIFO) event loop evaluate and removed from the queue.(Responsive)
+	  6.if req is blocking req gets diverted in to thread pool(inside which working thread will be there)
+	     and after certain time this working thread which is holding req gives response to EventQueue...
+	 7.Every req will have its own execution context....
+		 
+		****NODEJs is single threaded coz event loop is making himself free when handling requests
+		     taking help of thread pool(working thread).
+			 
+
+	
+	 
+	  

@@ -1,0 +1,7 @@
+ACTIVETED ROUTER:
+--->one of modules in angular
+--->takes the parameter and gives paramas object
+--->checks for routing
+---->activated routes :
+      import { ActivatedRoutes } from '@angular/router';
+	  

@@ -1,0 +1,129 @@
+DATA BINDING:
+--->allows us to take data from component and write on to DOM
+
+----->once side with component will have function and property,one side of component DOM
+----->Interpolation: one way data binding and two way data binding...(listeners will be there)
+----->Passing data:
+type1:interpolation to bind data
+		------>we can declare variables inside template called template(html template) variables    
+         we use #variable name
+        <input type="text" #name placeholder="Enter a Name:" (click)='sendData(name)'>
+		goto .ts 
+		sendData(name){
+		console.log(name);
+		}
+		planning to access name as it is DOM object--->name.value
+type2:[attribute ]---->represents binding properties
+        <h1 [innerText]="homeData"></h1>
+		<input type="text" [value]='homeData'>
+		
+		inside component.ts
+		nestedTag( ){
+		 return "<p [innerText]="nestedTag"></p>"
+		 }
+		 inside component.html
+		<p [innerText]="nestedTag"></p>
+		<input type="text" [value]='nestedTag'>
+		
+		
+------>component--->DOM(interpolation)
+         [ ]---->DOM(type2 data binding)
+		 
+-------->one way DOM to component:
+			1.template along with Event
+			2.$event object
+				<input type="text" (click)=' passData($event)'>
+				goto component.ts
+				passData($event){
+				console.log($event);
+				}
+				<h1>{{input}}</h1>
+				--->$event object inside which we will have target attribute--->value attribute
+				what ever the data we enterted inside input field inside DOM will be taken by value attribute. 
+				console.log($event.target.value);
+				this.input=$event.target.value;
+				
+---------->[ ]--->property binding -->(component to DOM)
+              ( )---->function binding -->(DOM to component)
+			  
+			  Example:(click event)
+			  <input type="text" [value]="email"  (click)='passData($event)'>
+			  
+			  (input event)
+			 <input type="text" [value]="email"  (input)='passData($event)'>
+			 
+			 (enterevent)
+			 <input type="text" [value]="email"  (keydown.enter)='passData($event)'>
+			 
+			 (alt event)
+			 <input type="text" [value]="email"  (keyup.alt)='passData($event)'>
+			 
+			 <input type="text" [value]="email"  (keydown.alt)='passData($event)'>
+			 
+			 (control event)
+			 <input type="text" [value]="email"  (keydown.control)='passData($event)'>
+			 
+			 (ctrl+shift event)
+			  <input type="text" [value]="email"  (keydown.control.shift)='passData($event)'>
+			 
+			 
+			  goto componet.ts
+			  email:string="buddynivi@gmail"
+		 
+--------->two way data binding:
+[ ] ----->property
+(  ) ----->event
+			[ ] + ( ) =[ ( ) ]---->banana binding...
+			inside app.module.ts:
+			   import {FormsModule} from '@angular/forms'
+			   inside imports add FormsModule
+			
+			componnet.html:
+			 <input type="text" [(ngModel)]="email"  (keydown.enter)='passData( )'>
+			 *****no need of $event
+			 
+			 goto component.ts:
+			 passData( ){
+				console.log(this.email);
+				}
+	
+				
+				one more exapmle:
+				<input type="text" [(ngModel)]="email"  >
+				<button type="button" (click)='passData( )'>Send Email</button>
+				
+Registration Field:
+<h1>Registers</h1>
+<form action=" " method=" ">
+<input type="text" [(ngModel)] ='registrationData.name' name = "name" id="name"></br>
+<input type="text" [(ngModel)] ='registrationData.email' name="email" id="email"></br>
+<input type="text" [(ngModel)] ='registrationData.password' name="password" id="password"></br>
+<input type="text" [(ngModel)] ='registrationData.gender' name = "gender" id="gender"></br>
+<button type="button" (c
+				lick)="registrationUser( )">send</button>
+</form>
+
+
+
+
+
+inside .ts
+export class UsersComponent{
+    
+	registrationData={ 
+	name:' ',
+	email:' ',
+	password: ' ',
+	gender: ' '
+	};
+	constructor( ) { }
+	registrationUser( ) :any{
+	console.log(this.registrationData);
+	
+}
+	
+			 
+			
+			 
+			
+

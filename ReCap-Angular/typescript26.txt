@@ -1,0 +1,44 @@
+Difference Between TypeScript and JavaScript:
+
+TypeScript:
+1.OOPs based
+2.Strictly typed
+3.Allow type restriction 
+4.Compiler to compile our code.
+
+JavaScript:
+1.OBP (Object Based Programming language) doesn't support Polymorphism and Inheritence
+2.Loosely typed
+3.Dynamic Typing
+4.Interpreted Language
+
+1.TypeScript code get compiled and generate JavaScript code.this compilation is called 
+  as "Transpilation".
+  we use tsc(TypeScriptCompiler) Compilers.
+2.MicroSoft Owns this language. Typescript is superset of JavaScript.
+
+****Installation of TypeScript:
+
+	npm install -g typescript 
+	
+****Compilation:
+    1.tsc filename.ts --->converts ts to js
+	2.node filename.js --->can run inside brower.
+****Exta Added types inside typescript:
+    tuple: nothing but array allows us to restrict type inside and size
+	       
+		   let arrayName : [string,number]=[string value,number value]
+		   
+	enum:group of constant elements,we cannot change it!
+	
+	       enum name {
+					Key=Value,
+					Key=Value,
+					Key=Value,
+					}
+					1.If we dont mention any key by default it takes 0.
+					2.If we mention and number to starting key it gets automatically increments
+					3.Once a value is declared their values.
+					4.Once a value is declared inside enum it cannot be changed its constant
+					  throught the program.
+					  

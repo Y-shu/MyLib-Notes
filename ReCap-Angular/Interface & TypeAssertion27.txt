@@ -1,0 +1,9 @@
+INTERFACE:
+1.contains empty body functions
+2.follows first cow method
+3.All of the properties are to be passed . no excess parameter are allowed once declared.
+
+TYPE ASSERTION:
+Injecting a type into it...
+
+var name = (variableName as number[])

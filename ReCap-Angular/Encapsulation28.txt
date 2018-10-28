@@ -1,0 +1,8 @@
+ENCAPSULATION:
+
+1.Protect Data
+2.only know function get modifed other function.
+3.declare property as private, and all allow access via public know function.
+4.encapuslations achieve using setters and getters.
+
+if we dont want any default value to initilize we dont use constructor.

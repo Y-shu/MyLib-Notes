@@ -1,0 +1,9 @@
+ACCESS MODIFIER:
+
+1.clasc is container like. we need to provide access to use it properly
+2.three:
+  public-->Allows access data and funtcions with in class,outside class and outside module.
+  private-->Allows access data and function only with in class.
+  protected-->inhertited people can only access(with in class , child class).
+  
+  

@@ -1,4 +1,8 @@
-Difference Between TypeScript and JavaScript:
+JavaScript fails to embrace the features of Object Orientation, strong type checking
+and compile-time error checks prevents JavaScript from succeeding at the enterprise 
+level as a full-fledged server-side technology.TypeScript was presented to bridge this gap.
+
+DIFFERENCE BETWEEN TYPESCRIPT AND JAVASCRIPT:
 
 TypeScript:
 1.OOPs based
@@ -11,6 +15,11 @@ JavaScript:
 2.Loosely typed
 3.Dynamic Typing
 4.Interpreted Language
+
+****The core difference is that statically-typed languages perform type checking at
+compile time,while dynamically-typed languages perform type checking at run time.
+
+****TypeScript is both a language and a set of tools.
 
 1.TypeScript code get compiled and generate JavaScript code.this compilation is called 
   as "Transpilation".
@@ -41,4 +50,68 @@ JavaScript:
 					3.Once a value is declared their values.
 					4.Once a value is declared inside enum it cannot be changed its constant
 					  throught the program.
-					  
+	****CUSTOM TYPE:
+			Classes and interfaces are powerful structures that facilitate not 
+			just object-oriented programming but also type-checking in TypeScript. 
+			A class is a blueprint from which we can create objects that share 
+			the same configuration - properties and methods. An interface is a 
+			group of related properties and methods that describe an object,
+			but neither provides implementation nor initialisation for them.
+			
+			INTERFACE:
+			
+			CLASS:
+			 used to create instances out of class these instances are objects
+			 
+			 class consists of  1.data memebers.
+								2.memeber functions.
+								
+								If we want to access data memebers or memebers function out
+								side class we create object inside class we use "this."
+								
+								constructor are used for initilization
+								
+								constructor are only one for one class
+								In java we are having multiple constructor
+								
+								we need to initilize all properties once they are declared inside
+								constructor but inside java we are having multiple constructors concept
+								so inorder to over come this we use "OPTIONAL" --- "?"
+								
+								name?:string;
+								but optional parameters are to kept at last in sequence
+								
+								SYNTAX:Constructor
+								class className{
+								
+								data members1
+								data members2
+								data members3
+											.
+											.
+											.
+							    member functions1
+								member functions2
+								member functions3
+											.
+											.
+											.
+								constructor(argument1,argument2,argument3){
+								this.argument1=argument1
+								this.argument2=argument2
+								this.argument3=argument3
+								} //declaring a constructor
+								}
+								memory creation using new (object)
+								let objname = new classname(argument1,argument2,argument3);
+								objename.methodName();
+								
+								using zero value arguments we can dynamically initilize object
+								then we should not initilize the values at class level using 
+								constructor.
+								
+								new keyword related to memory management
+								
+								
+			
+		

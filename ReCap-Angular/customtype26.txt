@@ -1,0 +1,28 @@
+****CUSTOM TYPE:(INTERFACES) we design our own types using interface.
+			Classes and interfaces are powerful structures that facilitate not 
+			just object-oriented programming but also type-checking in TypeScript. 
+			A class is a blueprint from which we can create objects that share 
+			the same configuration - properties and methods. An interface is a 
+			group of related properties and methods that describe an object,
+			but neither provides implementation nor initialisation for them.
+			
+			INTERFACE:
+			An interface descibes object but doesn't provides implementation or initilization
+			1.Naming---First Cow Method
+			2.An interface defines the syntax that any entity must adhere to.
+			3.Interfaces define properties, methods, and events, which are the members of the interface.
+			4.Interfaces contain only the declaration of the members.
+			5. It is the responsibility of the deriving class to define the members.
+			6.To reuse the signature(defined structure with type check) across objects we can define
+    		  it as an interface.
+			  ***Interfaces are not to be converted to JavaScript.
+			  ***Create an instance of the object with new.
+			SYNTAX:
+			
+			    interface interface_name{
+				}
+				
+			
+								
+			
+		

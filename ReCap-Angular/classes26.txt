@@ -1,0 +1,81 @@
+CLASS:
+1.TypeScript is object oriented JavaScript.
+2.TypeScript supports object-oriented programming features like classes,
+  interfaces, etc.
+3.A class in terms of OOP is a blueprint for creating objects.
+4.A class encapsulates data for the object.
+5.Typescript gives built in support for this concept called class.
+6.Typescript gets this feature from ES6.
+
+SYNTAX:
+class Class_Name{
+//class scope
+}
+**used to create instances out of class these instances are objects
+			 
+			 class consists of data members-fields,functions,constructor
+                                1.data memebers.
+								2.memeber functions.
+								3.constructor.( Responsible for allocating memory for the 
+								                objects of the class)
+												
+			1.A constructor is a special function of the class that is responsible for initializing
+      		  the variables of the class. TypeScript defines a constructor using the constructor keyword.
+			  A constructor is a function and hence can be parameterized.
+			2.The this keyword refers to the current instance of the class. 
+			3.To create an instance of the class, use the new keyword followed by the class name.
+								
+			****If we want to access data memebers or memebers function out
+				side class we should create object inside class we use "this."
+			
+			****constructor are only one for one class
+				In java we are having multiple constructor
+								
+			****we need to initilize all properties once they are declared inside
+				constructor but inside java we are having multiple constructors concept
+				so inorder to over come this we use "OPTIONAL" --- "?"
+								
+								name?:string;
+								but optional parameters are to kept at last in sequence
+								
+								SYNTAX:Constructor
+								class className{
+								
+								data members1
+								data members2
+								data members3
+											.
+											.
+											.
+							    member functions1
+								member functions2
+								member functions3
+											.
+											.
+											.
+								constructor(argument1,argument2,argument3){
+								this.argument1=argument1
+								this.argument2=argument2
+								this.argument3=argument3
+								} //declaring a constructor
+								}
+		****memory creation using new (object)
+		    let objname = new classname(argument1,argument2,argument3);
+			objename.methodName();
+								
+		****using zero value arguments we can dynamically initilize object
+			then we should not initilize the values at class level using 
+			constructor.
+								
+		****new keyword related to memory management
+		
+		ACCESSING ATTRIBUTES AND FUNCTIONS:
+		1.A class’s attributes and functions can be accessed through the object.
+		2.Use the ‘ . ’ dot notation (called as the period) to access the data members of a class.
+		
+		//accessing an attribute 
+		obj.field_name 
+
+		//accessing a function 
+		obj.function_name()
+								

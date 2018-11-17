@@ -1,0 +1,20 @@
+ABSTRACT:
+1.Abstraction is an Object Oriented programming concept
+2.A class can specify how an inherited class should implement the class itself, 
+  including any abstract methods specified.
+3.The concept behind abstraction is that--hiding the complexity of the implementation 
+  from inherited classes and and then allowing them to implement the functionality 
+  themselves.
+  *****An abstract class looks and feels like a standard class with a key exception: 
+  ABSTRACT CLASSES MAY NEVER BE INSTANTIATED.
+4.In TypeScript abstraction can be achieved by using the abstract keyword -
+  which can be applied to both classes and methods specified in classes.
+
+  
+5.We cannot create instance of abstract class
+6.In order to implement our abstract class we need to create a subclass and extend it
+  using the extends keyword.
+7.And we need to implement parent class abstract methods or else it will throw an error 
+  saying that--"NON-ABSTRACT CLASS 'xyz(child class)' DOSENOT INHERITED ABSTRACT MEMBERS 'ABSTRACT MEMBER'
+  FROM CLASS 'abc(parent class)'.
+  

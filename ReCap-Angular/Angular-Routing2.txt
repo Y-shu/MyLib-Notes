@@ -1,0 +1,94 @@
+COMPONENT:
+**Component is the basic fundamental buliding block of Angular.
+**Root Component is app-root
+
+1.install angular cli
+   npm install -g @angular/cli
+2.to start a project
+	ng new fileName
+3.getting into project folder and hit:
+    ng serve -o(this opens our application on default port automatically)
+4.The basic building blocks of an Angular application are NGMODULES(provide a compilation
+  context for components).An Angular app is defined by a set of NgModules.
+5.
+-------------------------------------------------------------------------------------
+ROUTING:
+1.<app-root></app-root> -- this allows us to get content from another files
+2.first file angular will load main.ts(app module)
+3.style.css--global css(if we want to apply css to our project)
+
+angular is SINGLE PAGE APPLICATION
+****COMPONENT:
+  -->Every major block of our web application will be a COMPONENT
+     ex: header bar component,side bar component,nav bar component....
+  -->ts:dynamic data which gets render into html template
+     css:styling 
+	 spec.ts:test cases
+	 html:html
+  -->binds few things together-> combines data,template and logic(front end)
+  -->run ng serve --port 3030 (4200 by default)
+  ***WEB PACK is tool for converting/compiling and bundling
+      it internally builds a dependency graph which maps every module your project needs 
+	  and generates one or more bundles.
+  -->app.component.ts:
+     1.@--decorator allows us to generates meta information(header data).
+	 2.inside decorator: selector--(app-root)
+	                     template url--html data  
+						 
+						 **ctrl+u(source code)
+	 3.GENERATING COMPONENT:
+		MANUALLY
+	   1.Make a component(fileName.ts)
+	   2.Register Component -- app.module.ts file--import it here
+	   3.Render the Component--app.component.html--(main purpose is to render/populate)--we add our
+	                                                component tag here
+													
+		CLI:
+          ng generate component componentName	
+     4.app is default component
+
+     5.Building Blocks:
+        component--->
+        module--->grouping related component together(we take these modules and keep them app.module.ts)
+        services--->allow to share data between components.
+	    router--->navigate from one component to another component.
+			
+	 6.angular router:
+	    mapping urls...map a class(component) here
+		1.generate router.
+		2.register router.
+		3.link outlets.
+		3 ways to perform routing.....
+		
+		--->app.module.ts:
+		     1.first import routes module
+			 import {RouterModule, Routes} from '@angular/router';
+			 2.register routes:
+			  imports: [
+					BrowserModule,
+					AppRoutingModule,
+					RouterModule.forRoot(routes)
+						],
+			 3.link outlets.
+			   app.component.html:
+			   
+			   <app-header></app-header>
+			   <app-navigation></app-navigation>
+			   <router-outlet></router-outlet>
+			   <app-footer></app-footer>
+			   
+			 ***app.module is not to have routing inside as it should not hold huge amount data
+			 so generate module to hold routing data.....
+			 
+			 ng generate module app-routing(module Name)
+			 
+			 ng generate module app-routing --flat--module=app
+			 --flat to map it to src folder
+			 --module map to app folder--create module inside app.
+			 
+			 
+			 ***by giving "href" our page is getting reload but it should not reload as this
+			 is single page application... we use "routerLink"(it works as single page application).
+			 
+			 
+

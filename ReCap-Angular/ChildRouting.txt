@@ -1,0 +1,34 @@
+CHILD ROUTING:
+Navigating child routing...
+1.one path can have only one component 
+ but
+     {
+  path: 'properties/cars', component: CarsComponent
+}, {
+  path: 'properties/bikes', component: BikesComponent
+},  {
+  path: 'properties/houses', component: HousesComponent
+}
+
+2. from angular 4:
+    childern:[{},{}]
+	
+DATA BINDING:
+<h1>[innerText]='app'</h1>  ----->property binding
+( ) --->functionality binding/event binding.
+{{ }}--->interpolation
+[ ] -->property binding.
+
+DIRECTIVES:
+are for dom manipulation
+
+we can define a variable inside html template
+#variableName
+
+data comes to component only when we hit or trigger any thing inside template
+
+$event object-->have targeted properties :
+			1.click event
+			2.
+			
+

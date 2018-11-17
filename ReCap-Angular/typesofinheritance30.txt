@@ -1,0 +1,37 @@
+3different types of classes inside typescript
+1.concrete class-fully implemented
+2.Interface-No implementation
+3.Abstract-Partially implemented--->empty body function(no implementation)
+								--->functions with body(Implemented function)
+4.Static-
+
+
+INHERITANCE:
+
+1.single inheritance(super--child)
+2.multi-level inheritance(super--child
+							   --child)
+3.hybrid/hierarical inheritance(super--child
+							         --child
+									 --child
+									 --child)
+4.multiple inheritance (we can aquire using interface) super---
+													   super---child
+													   super---
+												
+****ABSTRACT CLASS:
+    1.halfly implemented function and not implemented functions
+    2.by default all the members in interface are abstract members we can use abstract keyword
+    3.we cannot create instance of abstract or interface---so we can only access using child class-fully
+      create object of child class and start accessing...	
+****STATIC:	  
+	  1.static only one time memory creation
+	  2.LOADING TIME ONLY IT WILL CREATE MEMORY	
+	  3.we can make data members as static and member functions can be static
+       *****
+	  (instance +memory=object)
+	  4.//fixed only one time memory avaliable-they get memory at loading time
+        //the below static variables will get global level / global object
+	
+	  5.//non-static data memebers are not allowed to use inside static method becoz those 
+        //data memebers are  not given memeory at global level

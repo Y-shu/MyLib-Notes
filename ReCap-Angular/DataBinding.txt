@@ -1,0 +1,17 @@
+Binding should be two way... from template to component and c
+
+template to component---->events.
+component to template---->property binding.
+
+[]+()---->two way data binding
+
+ngModel combine both data binding and event binding 
+ngModel is not know to input tag so....import "forms" module
+
+Services:
+simple class which shares data across components
+
+singleton design patter-->only once its instantiated and used as many times as possible
+dependency injection ---loosely 
+
+providers section inside app.module.ts is used for dependendy injection

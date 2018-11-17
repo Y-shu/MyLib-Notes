@@ -109,7 +109,10 @@ and "it" and the main function that runs tests.
 					  
 					  //as many as it ( )  we can have inside describe ( )
 			    }) 
-			   
+			   ****checking the length of object as we dont have length method on object
+			       so we take help of keys... count of keys
+			       
+				   expect(Object.keys(getUsers()).length).equal(4);
 			   
 		       should and expect is ---behaviour driven(BDD)
 			   assert---test driven(TDD)
@@ -148,12 +151,12 @@ and "it" and the main function that runs tests.
 			   res.body.should.be('array');
 			   res.type.should.equal('applictaion/json');
 			   res.body[0].should.have.property('_id');
-			      res.body[0].should.have.property('name');
-				     res.body[0].should.not.have.property('age'); ---->verifying for negative
-					    res.body[0].should.have.property('reviews');
-						done( );
+			   res.body[0].should.have.property('name');
+			   res.body[0].should.not.have.property('age'); ---->verifying for negative
+			   res.body[0].should.have.property('reviews');
+			   done( );
 			   
-		***test   (folder)
+		***test(folder)
 		      test-controller
 			  test-model
 			  test-utilies
@@ -166,3 +169,4 @@ and "it" and the main function that runs tests.
 		   package.json
 		   under scripts:
 		       "test":"nyc mocha --recursive --time"
+			   

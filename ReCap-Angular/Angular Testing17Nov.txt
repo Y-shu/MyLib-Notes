@@ -1,0 +1,24 @@
+Test(Automated)
+1.unit test(testing done with out help of external resources)
+2.Intergrating test(having some external resources--functionality integrated
+                    with internal and external)
+					example: component based on services and template
+***both unit and intergation test are written by developer...
+***for unit and intergation we have frameworks---Jasmine and Karma
+***Jasmine is an angular test framework that allows us to use bunch of matchers(functions to create test cases)
+   assertion library which have matcher functionality 
+   ***this matcher are similar to node assertion library functions
+   ***Jasmine is mainly focused of BDD(behavioural driven development) based test
+3.end to end (using frameworks--->angular--protractor)
+
+***MOCHA : 
+			1.test runner
+			2."describe(group of test cases)" and "it(individual test cases)"....
+			***IN ANGULAR:
+			3."it" block is called as spec test.
+			4."describe" is called as suit
+		
+1.ng new my-app-test(application to test)
+**karma.conf.js --- it runs when we hit ng test
+2.ng test (hit -- to run your test cases) this opens an browser!
+3.comment 3rd spec(it) last line inorde to remove certain errors

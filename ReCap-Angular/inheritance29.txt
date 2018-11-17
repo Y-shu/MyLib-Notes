@@ -1,0 +1,38 @@
+INHERITANCE:
+1.TypeScript supports the concept of Inheritance.whereas javascript will not
+2.Inheritance is the ability of a program to create new classes from an existing class.
+3.The class that is extended to create newer classes is called the parent class/super class.
+4.The newly created classes are called the child/sub classes.
+5.A class inherits from another class using the ‘extends’ keyword. 
+6.Child classes inherit all properties and methods except private members and constructors 
+  from the parent class.
+  
+  SYNTAX:
+  class child_class_name extends parent_class_name
+  
+  ****TypeScript doesn’t support multiple inheritance.
+  
+  ****when creating sub class constructor we need to initilize super/parent class constructor
+      using "super" method we will send sub class constructor values to super class constructor
+      super class will get initilize if we do so!
+	  
+  ****Every sub class has to initilize parent class constructor....its mandatory!
+      if it is optinal value no need of doing initilize sub class property
+
+1.Parent class has data and function which can be used by child class on certain conditions.
+2.Access Modifier plays much role here
+3.  Parents to child
+     class to class ---->extends
+	 interface to class --->implements
+	 
+one use of interface--->custome type
+interface---> 
+data will be abstract data
+***function will have abstract(no body only declation will be there--empty function body)
+
+class(blue print to initilize instance)--->
+data 
+function will have initilization(body will be there)here function will have logic.
+
+classes are fully developed with implementation.
+interface are not fully developed only structure is provided.

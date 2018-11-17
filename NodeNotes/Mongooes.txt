@@ -1,3 +1,18 @@
+Mongoose is a MongoDB object modeling tool designed to work in an 
+asynchronous environment.
+Mongodb is --->a Data Based.
+			   ODM-Object Document Mapping
+				
+Mongoose is --->a Object Modelling Tool.
+				ORM-Object Relational Model(strict models/schemas)
+				
+	1.ORM or Object Relational Mapping is based on the principal of having strict 
+	  models or schemas.In ORM, which mongoose is using, you have to define your 
+	  schema structure.There has to be a fixed schema.ODM or Object Document 
+	  Mapping is the core concept of mongo itself; and same goes with mongodb 
+	  native driver. Mongodb doesn’t need any fixed schema. You can insert or 
+	  update whatever and however you want.
+
 From schemaless to schema oriented ---Moongoose
 -->replacing mongodb with mongooes. 
 -->mongooes is anyway schemaless but inside our application(node)it is 

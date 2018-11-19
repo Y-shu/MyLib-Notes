@@ -21,4 +21,8 @@ Test(Automated)
 1.ng new my-app-test(application to test)
 **karma.conf.js --- it runs when we hit ng test
 2.ng test (hit -- to run your test cases) this opens an browser!
-3.comment 3rd spec(it) last line inorde to remove certain errors
+3.comment 3rd spec(it) last line inorde to remove certain errors(no required for my stuff)
+4.karam sees for spec extension only then it can run test cases.
+5.expect in jasmine---
+	expect has matchers like--toEqual , toBe....etc
+6. we have beforeEach and afterEach methods.

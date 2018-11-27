@@ -1,0 +1,45 @@
+MONGO
+
+1.nosql 
+2.open-source document database.
+3.MongoDB provides high performance data persistence.
+  -->Supports for embedded data models reduces I/O activity on db system.
+  -->Indexes(internal) supports faster query 
+  -->can include keys from embedded documents and arrays..
+4.MongDB provides rich query language
+  -->to supports CURD(read and write operations) operations
+  -->Data Aggregations
+  -->text search and geospatial
+5.MongoDB provides High Avaliability
+  -->Mongodb's replication facility, replica set, provides:
+     --->automatic failover and 
+	 --->data redundancy
+	 ****A replica set is a group of MongoDB servers that maintain the same data set, 
+	     providing redundancy and increasing data availability.
+6.MongoDB provides horizontal scalability as part of its core functionality:
+    Sharding distributes data across a cluster of machines.
+7.Supports Multiple storage engines.
+8.Mongodb uses JavaScript
+9.No RDB,No RDBMS and  No SQL so Only ....JavaScript
+10.RelationShip concept makes database very slow so there is no such concept of 
+   relations in no-sql.
+11.Mongodb is designed to store any type(cache data and engine related data) of data 
+   where as sql designed to store application related data.
+12.In SQL everything we store in terms of Tables, In no-sql we store everything in the form
+   of Collections or Documents(Json/Bson)
+13.In SQL it comes with default Authentication and Authorization. 
+   In no-sql it is an open db
+14.In SQL Structure is of table type with default Schema
+   In no-sql it is purly dynamic shema db (changes w.r.t to data)
+15.In SQL well schema(static)
+   In no-sql schema(dynamic)--->Json Operated.
+16.Example of SQL: Oracle Server,MySql,post query, H2D query, Mariya db
+   Example of No-SQL:Mongodb,Dynamodb(Based on cloud--AWS),Kasandra,Redis
+
+
+		 
+		 
+
+
+
+

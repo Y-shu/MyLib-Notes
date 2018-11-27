@@ -1,0 +1,22 @@
+End 2 End Testing:
+1.to test functionality...
+2.Protarctor javascript framework--1. jasmini
+								   2.karma
+3.SeleniumWebDriver:Automation tool(to test browser)
+4.selenium web to selenium server to browser
+5.we write test cases in typescript and there exists a target:"es5" inside e2e(tsconfig.e2e.json)
+ which helps to convert to JavaScript 
+6.protractor acts as wrapper around seleniumWebDriver 
+7.ng e2e to test end-to-end test cases.
+8.Global Objects:(import from protractor)
+     //predefined methods...
+	1.browser
+	2.element
+	3.by
+	***to load a page browser.get('/login')
+	***element(by.name('elementName ').getText)
+	***element(by.tagName('tagName').getText
+	element.all(to test group of similar tags).
+	
+	
+ 

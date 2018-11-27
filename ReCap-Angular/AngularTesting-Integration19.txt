@@ -1,0 +1,14 @@
+INTEGRATION TESTING:
+
+1.Template to component
+2.Component to template
+
+Component: template+data+front end logic
+  1.we need to test all the above.
+  2.before creating test we need to create environment so we create a fake implementation
+    registration of component(fake implementation) 
+	this test environment(called test bed).
+  3."TestBed.createComponent" inside app.component.spec.ts create instance of that particular
+    components
+  4.fixture.detectChanges();--->it going tell compiler to detect newly generated changes.
+  
